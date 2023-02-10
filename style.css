@@ -52,16 +52,18 @@ header{
 .top-news,.lower-headline{
     background-color: white;
     margin-top:40px;
-    padding:10px;
     width:350px;
+    display:flex;
 }
 .top-news{
+    padding:10px;
     height:300px;
     border-radius: 10%;
 }
 .lower-headline{
     height:150px;
     border-radius:30px;
+    grid-template-columns: 60% 40%;
 }
 .top-title,.headline-title{
     font-weight:bold;
@@ -73,4 +75,9 @@ header{
 }
 .headline-title{
     font-size:25px;
+}
+.headline-img{
+    height:100%;
+    width:30%;
+    background-color: black;
 }
