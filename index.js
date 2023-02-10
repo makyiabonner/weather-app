@@ -30,15 +30,18 @@ fetch(`http://api.mediastack.com/v1/news?access_key=e046e8d7db98d4cf3a1bf2f9d589
     hline2p.textContent = data.data[2].description;
 
     //Prevent text overflow for headline and top news
-    if(data.data[1].title.length >= 60){
-        hline1Title.textContent = data.data[1].title.substring(0,60)+'...';
+    //Top News
+    //Headline 1
+        if(data.data[1].title.length >= 60){
+            hline1Title.textContent = data.data[1].title.substring(0,60)+'...';
         }
-    else hline1Title.textContent = data.data[1].title;
+        else hline1Title.textContent = data.data[1].title;
 
-    if(data.data[2].title.length >= 60){
-        hline2Title.textContent = data.data[2].title.substr(0,60) +'...';
-    }
-    else hline2Title.textContent = data.data[2].title;
+    //Headline 2
+        if(data.data[2].title.length >= 60){
+            hline2Title.textContent = data.data[2].title.substr(0,60) +'...';
+        }
+        else hline2Title.textContent = data.data[2].title;
     
     if(data.data[1].image == undefined || data.data[1].image == null){
         return hline1Img.src = 'https://cdn.vectorstock.com/i/preview-1x/82/99/no-image-available-like-missing-picture-vector-43938299.jpg';
