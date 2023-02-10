@@ -50,7 +50,7 @@ header{
     background-color: rgba(13, 13, 43, .7);
 }
 .top-news,.lower-headline{
-    background-color: white;
+    background-color: rgba(124, 124, 128, 0.7);
     margin-top:40px;
     width:350px;
     display:grid;
@@ -64,10 +64,11 @@ header{
     height:150px;
     border-radius:30px;
     grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
 }
 .top-title,.headline-title{
     font-weight:bold;
-    color:navy;
+    color:white;
     font-family: 'Comfortaa', cursive;
 }
 .top-title{
@@ -78,7 +79,7 @@ header{
     grid-row:1/3;
     font-size:20.75px;
     word-spacing: 2px;
-    margin:8px;
+    margin:12px;
 }
 .headline-p{
     display: none;
