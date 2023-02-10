@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
 *,
 *::before,
 *::after{
@@ -63,7 +65,8 @@ header{
 }
 .top-title,.headline-title{
     font-weight:bold;
-    color:navy
+    color:navy;
+    font-family: 'Comfortaa', cursive;
 }
 .top-title{
     font-size:40px;
