@@ -93,8 +93,8 @@ header{
     font-family: 'Poppins', sans-serif;
 }
 .headline-img{
-    height:150px;
-    max-width:141px;
+    height:100%;
+    width:100%;
     background-color: white;
     border-radius: 0 30px 30px 0px;
     grid-area: 1/2/3/3;

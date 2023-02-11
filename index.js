@@ -1,5 +1,5 @@
 let topTitle = document.querySelector('.top-title')
-let topImg = document.querySelector('.top-news').style.background;
+let topImg = document.querySelector('.top-news')
 let topDesc = document.querySelector('.top-p');
 
 let hline1Title = document.querySelector('.hline1-title');
@@ -15,7 +15,6 @@ document.querySelector('button').addEventListener('click', news)
 
 function news(){
 let city = document.querySelector('#city').value.toLowerCase()
-//My subscription doesn't support https
 
 fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309efa6b5b274df`)
 .then(res => res.json())
@@ -23,12 +22,22 @@ fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309ef
     console.log(data)
 
     topTitle.textContent = data.articles[0].title;
+    topImg.style.background = `url(${data.articles[0].urlToImage})`;
+    topImg.style.backgroundPosition = 'center';
+    topImg.style.backgroundSize = 'cover';
+    topImg.style.backgroundRepeat = 'no-repeat';
+   
     topDesc.textContent = data.articles[0].description;
 
-    hline1Img.src = data.articles[1].urlToImage;
+    hline1Img.style.background = `url(${data.articles[1].urlToImage})`;
+    hline1Img.style.backgroundPosition = 'center';
+    hline1Img.style.backgroundSize = 'cover';
+    hline1Img.style.backgroundRepeat = 'no-repeat';
 
-    hline2Img.src = data.articles[2].urlToImage;
-
+    hline2Img.style.background = `url(${data.articles[2].urlToImage})`;
+    hline2Img.style.backgroundPosition = 'center';
+    hline2Img.style.backgroundSize = 'cover';
+    hline2Img.style.backgroundRepeat = 'no-repeat';
 //Prevent text overflow for headline and top news
   //Top News
       //Title
