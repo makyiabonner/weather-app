@@ -51,15 +51,15 @@ header{
     background-color: rgba(13, 13, 43, .7);
 }
 .top-news,.lower-headline{
-    background-color: rgba(124, 124, 128, 0.7);
+    background-color: rgba(31, 31, 31, 0.8);
     margin-top:40px;
     width:350px;
     display:grid;
 }
 .top-news{
-    padding:10px;
     height:300px;
     border-radius: 10%;
+    grid-template-rows: repeat(2,1fr);
 }
 .lower-headline{
     height:150px;
@@ -73,7 +73,15 @@ header{
     font-family: 'Comfortaa', cursive;
 }
 .top-title{
-    font-size:40px;
+    font-size:30px;
+    margin:12px;
+}
+.top-textbox{
+    height:100%;
+    width:100%;
+    grid-row:2/3;
+    background-color: rgba(31, 31, 31, 0.8);
+    border-radius: 0 0 30px 30px;
 }
 .top-p{
     display:none;
