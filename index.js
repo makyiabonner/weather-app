@@ -1,6 +1,6 @@
 let topTitle = document.querySelector('.top-title')
 let topImg = document.querySelector('.top-news')
-let topDesc = document.querySelector('.top-p');
+let topP = document.querySelector('.top-p');
 
 let hline1Title = document.querySelector('.hline1-title');
 let hline1Img = document.querySelector('.hline1-img');
@@ -21,13 +21,11 @@ fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309ef
 .then(data =>{
     console.log(data)
 
-    topTitle.textContent = data.articles[0].title;
     topImg.style.background = `url(${data.articles[0].urlToImage})`;
     topImg.style.backgroundPosition = 'center';
     topImg.style.backgroundSize = 'cover';
     topImg.style.backgroundRepeat = 'no-repeat';
    
-    topDesc.textContent = data.articles[0].description;
 
     hline1Img.style.background = `url(${data.articles[1].urlToImage})`;
     hline1Img.style.backgroundPosition = 'center';
@@ -41,7 +39,16 @@ fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309ef
 //Prevent text overflow for headline and top news
   //Top News
       //Title
+        if(data.articles[0].title.length >= 60){
+            topTitle.textContent = data.articles[0].title.substring(0,60)+'...';
+        }
+        else topTitle.textContent = data.articles[0].title;
+
       //Description
+        if(data.articles[0].description.length >= 90){
+            topP.textContent = data.articles[0].description.substring(0,90)+'...';
+        }
+        else topP.textContent = data.articles[0].description;
     
   //Headline 1
       //Title
@@ -73,7 +80,7 @@ fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309ef
         return hline1Img.src = 'https://cdn.vectorstock.com/i/preview-1x/82/99/no.urlToImage-available-like-missing-picture-vector-43938299.jpg';
     }
     if(data.articles[2].urlToImage == undefined || data.articles[2].urlToImage == null){
-        return hline2Img.src = 'https://cdn.vectorstock.com/i/preview-1x/82/99/no.urlToImage-available-like-missing-picture-vector-43938299.jpg';
+        return hline2Img.style.background = 'url("https://cdn.vectorstock.com/i/preview-1x/82/99/no.urlToImage-available-like-missing-picture-vector-43938299.jpg")';
         
     }
 })
