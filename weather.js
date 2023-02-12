@@ -1,14 +1,15 @@
-let cName = document.querySelector('.city-name');
-let date = document.querySelector('.day-and-date');
-let clock = document.querySelector('.time');
-let farenheit = document.querySelector('.main-left-farenheit');
-let tempDesc = document.querySelector('.main-left-temp-desc');
-let highTemp = document.querySelector('.high-temp');
-let mph = document.querySelector('.wind-mph');
-let riseTime = document.querySelector('.sunrise-time');
-let lowTemp = document.querySelector('.low-temp');
-let rainPer = document.querySelector('.rain-percent');
-let setTime = document.querySelector('.sunset-time');
+//DOM
+  let cName = document.querySelector('.city-name');
+  let date = document.querySelector('.day-and-date');
+  let clock = document.querySelector('.time');
+  let farenheit = document.querySelector('.main-left-farenheit');
+  let tempDesc = document.querySelector('.main-left-temp-desc');
+  let highTemp = document.querySelector('.high-temp');
+  let mph = document.querySelector('.wind-mph');
+  let riseTime = document.querySelector('.sunrise-time');
+  let lowTemp = document.querySelector('.low-temp');
+  let rainPer = document.querySelector('.rain-percent');
+  let setTime = document.querySelector('.sunset-time');
 
 document.querySelector('button').addEventListener('click', weather)
 
@@ -18,10 +19,15 @@ function weather(){
     .then(res => res.json())
     .then(data =>{
         console.log(data)
+      //weather-header-left
         cName.textContent = data.location.name + ',' + data.location.region;
         date.textContent = data.forecast.forecastday[0].date.toString();
+
+      //weather-main-left
         farenheit.textContent = data.current.temp_f.toString();
         tempDesc.textContent = data.forecast.forecastday[0].day.condition.text.toString();
+
+      //weather-main-right
         highTemp.textContent = data.forecast.forecastday[0].day.maxtemp_f.toString();
         mph.textContent = data.current.wind_mph.toString();
         riseTime.textContent = data.forecast.forecastday[0].astro.sunrise;
