@@ -30,6 +30,7 @@ header{
     grid-area:1/1/2/2
 }
 .weather-menu{
+    color:white;
     grid-area:2/1/3/2;
     margin-top: 30px;
     justify-self: center;
