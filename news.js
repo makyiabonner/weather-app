@@ -12,10 +12,8 @@ let hline2p = document.querySelector('.hline2-p');
 
 document.querySelector('button').addEventListener('click', news)
 
-
 function news(){
-let city = document.querySelector('#city').value.toLowerCase()
-
+    let city = document.querySelector('#city').value.toLowerCase()
 fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309efa6b5b274df`)
 .then(res => res.json())
 .then(data =>{
