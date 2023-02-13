@@ -40,7 +40,12 @@
     let day7 = document.querySelector(".day7");
     let day7Img = document.querySelector(".day7-img");
     let day7Temp = document.querySelector(".day7-temp");
+
+    let daten;
 document.querySelector('button').addEventListener('click', weather)
+
+
+
 
 function weather(){
     let city = document.querySelector('#city').value.toLowerCase()
@@ -65,6 +70,28 @@ function weather(){
         setTime.textContent = data.forecast.forecastday[0].astro.sunset
       
       //weather-bottom
+       //weekdays
+        day2.textContent = Intl.DateTimeFormat('en-GB', {  weekday: 'long', timeZone: "America/New_York"}).format(Date.parse(data.forecast.forecastday[2].date));
+        day3.textContent = Intl.DateTimeFormat('en-GB', {  weekday: 'long', timeZone: "America/New_York"}).format(Date.parse(data.forecast.forecastday[3].date));
+        day4.textContent = Intl.DateTimeFormat('en-GB', {  weekday: 'long', timeZone: "America/New_York"}).format(Date.parse(data.forecast.forecastday[4].date));
+        day5.textContent = Intl.DateTimeFormat('en-GB', {  weekday: 'long', timeZone: "America/New_York"}).format(Date.parse(data.forecast.forecastday[5].date));
+        day6.textContent = Intl.DateTimeFormat('en-GB', {  weekday: 'long', timeZone: "America/New_York"}).format(Date.parse(data.forecast.forecastday[6].date));
+        day7.textContent = Intl.DateTimeFormat('en-GB', {  weekday: 'long', timeZone: "America/New_York"}).format(Date.parse(data.forecast.forecastday[0].date));
+
+       //weekdays forecast images 
+        day2Img.src = data.forecast.forecastday[2].day.condition.icon;
+        day3Img.src = data.forecast.forecastday[3].day.condition.icon;
+        day4Img.src = data.forecast.forecastday[4].day.condition.icon;
+        day5Img.src = data.forecast.forecastday[5].day.condition.icon;
+        day6Img.src = data.forecast.forecastday[6].day.condition.icon;
+        day7Img.src = data.forecast.forecastday[0].day.condition.icon;
        
+       //weekdays forecast 
+       day2Temp.textContent = data.forecast.forecastday[2].day.condition.text;
+       day3Temp.textContent = data.forecast.forecastday[3].day.condition.text;
+       day4Temp.textContent = data.forecast.forecastday[4].day.condition.text;
+       day5Temp.textContent = data.forecast.forecastday[5].day.condition.text;
+       day6Temp.textContent = data.forecast.forecastday[6].day.condition.text;
+       day7Temp.textContent = data.forecast.forecastday[0].day.condition.text;
     })
 }
