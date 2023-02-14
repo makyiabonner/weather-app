@@ -29,17 +29,6 @@ header{
     color:rgb(13, 13, 43);
     grid-area:1/1/2/2
 }
-.weather-menu{
-    color:white;
-    grid-area:2/1/3/2;
-    margin-top: 30px;
-    justify-self: center;
-    padding:40px;
-    height:650px;
-    width:750px;
-    background-color:rgba(13, 13, 43, .7)   ;
-    border-radius:2%;
-}
 .news-menu{
     display: flex;
     align-items: space-around;
@@ -106,6 +95,65 @@ header{
     background-color: white;
     border-radius: 0 30px 30px 0px;
     grid-area: 1/2/3/3;
+}
+.weather-menu{
+    display: flex;
+    color:white;
+    grid-area:2/1/3/2;
+    margin-top: 30px;
+    justify-self: center;
+    padding:40px;
+    height:650px;
+    width:750px;
+    background-color:rgba(13, 13, 43, .7)   ;
+    border-radius:2%;
+}
+.weather-main{
+    width:700px;
+    height:250px;
+    display: flex;
+    margin-bottom:30px;
+}
+.weather-main-left{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(51, 51, 78);
+    height:250px;
+    width:200px;
+    margin:20px;
+    padding:10px;
+    border-radius: 10%;
+    justify-self: flex-start;
+}
+.main-left-farenheit{
+    font-size: 70px;
+}
+.main-left-temp-desc{
+    font-size: 30px;
+}
+.weather-main-right{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(51, 51, 78);
+    height:250px;
+    width:400px;
+    margin:20px;
+    padding:10px;
+    justify-self: flex-end;
+    border-radius: 10%;
+    text-align: center;
+}
+.main-right-input{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+.main-right-content{
+    padding:20px;
 }
 .weather-bottom{
     display: flex;
