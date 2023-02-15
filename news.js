@@ -10,9 +10,9 @@ let hline2Title = document.querySelector('.hline2-title');
 let hline2Img = document.querySelector('.hline2-img');
 let hline2p = document.querySelector('.hline2-p');
 
-document.querySelector('button').addEventListener('click', news)
+document.querySelector('button').addEventListener('click', getNews)
 
-function news(){
+function getNews(){
     let city = document.querySelector('#city').value.toLowerCase()
 fetch(`https://newsapi.org/v2/everything?q=${city}&apiKey=dff81faf29a9453b9309efa6b5b274df`)
 .then(res => res.json())

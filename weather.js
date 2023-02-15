@@ -41,13 +41,12 @@
     let day7Img = document.querySelector(".day7-img");
     let day7Temp = document.querySelector(".day7-temp");
 
-    let daten;
-document.querySelector('button').addEventListener('click', weather)
+document.querySelector('button').addEventListener('click', getWeather)
 
 
 
 
-function weather(){
+function getWeather(){
     let city = document.querySelector('#city').value.toLowerCase()
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=632a49dfefab49c186110226231202&q=${city}&days=7&aqi=no&alerts=no`)
     .then(res => res.json())
